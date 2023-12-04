@@ -4,16 +4,23 @@
 OLD_ZSHRC="$HOME/.zshrc"
 NEW_ZSHRC="$PWD/config/zsh/.zshrc"
 
+
 if [ -e "$OLD_ZSHRC" ]; then
-    BACKUP_OLD_ZSHRC="${OLD_ZSHRC}-$(date +%Y-%m-%d_%H-%M-%S)"
+    BACKUP_OLD_ZSHRC="${OLD_ZSHRC}-($(date +%Y-%m-%d_%H-%M-%S))"
 
     echo "Found old $OLD_ZSHRC file."
     echo "Backing up to $BACKUP_OLD_ZSHRC."
     
-    # mv "$OLD_ZSHRC" "$BACKUP_OLD_ZSHRC"
+    mv "$OLD_ZSHRC" "$BACKUP_OLD_ZSHRC"
+elif [ -L "$OLD_ZSHRC" ]; then
+    echo "Found old symbolic link at $OLD_ZSHRC."
+    echo "Removing symbolic link."
+    
+    rm "$OLD_ZSHRC"
 fi
 
-# ln -s $PWD/config/zsh/.zshrc ~/.zshrc
+
+ln -s $PWD/config/zsh/.zshrc ~/.zshrc
 echo "Symbolic link created ~/.zshrc to $NEW_ZSHRC."
 
 SOURCE_THEME_LOCATION="$PWD/setup/powerlevel10k"
@@ -35,3 +42,5 @@ fi
 # Create a new symbolic link
 ln -s "$SOURCE_THEME_LOCATION" "$DESTINATION_THEME_LOCATION"
 echo "Symbolic link created: $DESTINATION_THEME_LOCATION -> $SOURCE_THEME_LOCATION"
+
+source ~/.zshrc
