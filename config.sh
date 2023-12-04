@@ -1,27 +1,30 @@
 #!/bin/bash
 
 
-OLD_ZSHRC="$HOME/.zshrc"
-NEW_ZSHRC="$PWD/config/zsh/.zshrc"
+# ~/.zshrc linking
 
+ZSHRC_TARGET="$HOME/.zshrc"
+ZSHRC_SOURCE="$PWD/config/zsh/.zshrc"
 
-if [ -e "$OLD_ZSHRC" ]; then
-    BACKUP_OLD_ZSHRC="${OLD_ZSHRC}-($(date +%Y-%m-%d_%H-%M-%S))"
+if [ -e "$ZSHRC_TARGET" ]; then
+    BACKUP_ZSHRC_TARGET="${ZSHRC_TARGET}($(date +%Y-%m-%d_%H-%M-%S))"
 
-    echo "Found old $OLD_ZSHRC file."
-    echo "Backing up to $BACKUP_OLD_ZSHRC."
+    echo "Found old $ZSHRC_TARGET file."
+    echo "Backing up to $BACKUP_ZSHRC_TARGET."
     
-    mv "$OLD_ZSHRC" "$BACKUP_OLD_ZSHRC"
-elif [ -L "$OLD_ZSHRC" ]; then
-    echo "Found old symbolic link at $OLD_ZSHRC."
+    mv "$ZSHRC_TARGET" "$BACKUP_ZSHRC_TARGET"
+elif [ -L "$ZSHRC_TARGET" ]; then
+    echo "Found old symbolic link at $ZSHRC_TARGET."
     echo "Removing symbolic link."
     
-    rm "$OLD_ZSHRC"
+    rm "$ZSHRC_TARGET"
 fi
 
-
 ln -s $PWD/config/zsh/.zshrc ~/.zshrc
-echo "Symbolic link created ~/.zshrc to $NEW_ZSHRC."
+echo "Symbolic link created ~/.zshrc to $ZSHRC_SOURCE."
+
+
+# powerlevel10k theme linking
 
 SOURCE_THEME_LOCATION="$PWD/setup/powerlevel10k"
 DESTINATION_THEME_LOCATION="$PWD/setup/ohmyzsh/custom/themes/powerlevel10k"
@@ -34,13 +37,32 @@ if [ -d "$DESTINATION_THEME_LOCATION" ]; then
     if [ -L "$DESTINATION_THEME_LOCATION" ]; then
         echo "Removing existing symbolic link at: $DESTINATION_THEME_LOCATION"
         rm "$DESTINATION_THEME_LOCATION"
-    else
-        echo "Destination is not a symbolic link: $DESTINATION_THEME_LOCATION"
-        # Handle this case as needed
     fi
 fi
 # Create a new symbolic link
 ln -s "$SOURCE_THEME_LOCATION" "$DESTINATION_THEME_LOCATION"
 echo "Symbolic link created: $DESTINATION_THEME_LOCATION -> $SOURCE_THEME_LOCATION"
 
-source ~/.zshrc
+
+
+NVIM_TARGET="$HOME/.config/nvim"
+NVIM_SOURCE="$PWD/config/nvim"
+
+if [ -e "$NVIM_TARGET" ]; then
+    BACKUP_OLD_NVIM="${NVIM_TARGET}($(date +%Y-%m-%d_%H-%M-%S))"
+
+    echo "Found old $NVIM_TARGET."
+    echo "Backing up to $BACKUP_OLD_NVIM."
+    
+    mv "$NVIM_TARGET" "$BACKUP_OLD_NVIM"
+elif [ -L "$NVIM_TARGET" ]; then
+    echo "Found old symbolic link at $NVIM_TARGET."
+    echo "Removing symbolic link."
+    
+    rm "$NVIM_TARGET"
+fi
+
+# Create a new symbolic link
+ln -s "$NVIM_SOURCE" "$NVIM_TARGET"
+echo "Symbolic link created: $NVIM_SOURCE -> $NVIM_TARGET"
+
