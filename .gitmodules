@@ -1,6 +1,6 @@
 [submodule "setup/ohmyzsh"]
 	path = setup/ohmyzsh
-	url = git@github.com/ohmyzsh/ohmyzsh.git
+	url = https://github.com/ohmyzsh/ohmyzsh.git
 [submodule "setup/powerlevel10k"]
 	path = setup/powerlevel10k
-	url = git@github.com:romkatv/powerlevel10k.git
+	url = https://github.com/romkatv/powerlevel10k.git

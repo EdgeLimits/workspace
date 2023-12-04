@@ -26,6 +26,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 ## 1. 
 
 ```
+git submodule init
 git submodule update --recursive
 ```
 
