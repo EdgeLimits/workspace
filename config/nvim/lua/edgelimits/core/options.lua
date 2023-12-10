@@ -1,38 +1,82 @@
-local opt = vim.opt -- for conciseness
+-- [[ Setting options ]]
+-- See `:help vim.o`
+-- NOTE: You can change these options as you wish!
 
--- line numbers
-opt.relativenumber = true
-opt.number = true
+-- Set highlight on search
+vim.o.hlsearch = false
 
--- tabs & indentation
-opt.tabstop = 2
-opt.shiftwidth = 2
-opt.expandtab = true
-opt.autoindent = true
+-- Relative line numbers
+vim.o.relativenumber = true
+vim.o.number = true
 
---line wrapping
-opt.wrap = false
+-- Make line numbers default
+vim.wo.number = true
 
--- search settings
-opt.ignorecase = true
-opt.smartcase = true
+-- Enable mouse mode
+vim.o.mouse = 'a'
 
--- cursor line
-opt.cursorline = true
+-- Sync clipboard between OS and Neovim.
+--  Remove this option if you want your OS clipboard to remain independent.
+--  See `:help 'clipboard'`
+vim.o.clipboard = 'unnamedplus'
 
--- appearance
-opt.termguicolors = true
-opt.background = "dark"
-opt.signcolumn = "yes"
+-- Enable break indent
+vim.o.breakindent = true
 
--- backspace
-opt.backspace = "indent,eol,start"
+-- Save undo history
+vim.o.undofile = true
 
--- clipboard
-opt.clipboard:append("unnamedplus")
+-- Case-insensitive searching UNLESS \C or capital in search
+vim.o.ignorecase = true
+vim.o.smartcase = true
 
--- split windows
-opt.splitright = true 
-opt.splitbelow = true
+-- Keep signcolumn on by default
+vim.wo.signcolumn = 'yes'
 
-opt.iskeyword:append("-")
+-- Decrease update time
+vim.o.updatetime = 250
+vim.o.timeoutlen = 300
+
+-- Set completeopt to have a better completion experience
+vim.o.completeopt = 'menuone,noselect'
+
+-- NOTE: You should make sure your terminal supports this
+vim.o.termguicolors = true
+
+
+-- -- line numbers
+-- opt.relativenumber = true
+-- opt.number = true
+
+-- -- tabs & indentation
+-- opt.tabstop = 2
+-- opt.shiftwidth = 2
+-- opt.expandtab = true
+-- opt.autoindent = true
+
+-- --line wrapping
+-- opt.wrap = false
+
+-- -- search settings
+-- opt.ignorecase = true
+-- opt.smartcase = true
+
+-- -- cursor line
+-- opt.cursorline = true
+
+-- -- appearance
+-- opt.termguicolors = true
+-- opt.background = "dark"
+-- opt.signcolumn = "yes"
+
+-- -- backspace
+-- opt.backspace = "indent,eol,start"
+
+-- -- clipboard
+-- opt.clipboard:append("unnamedplus")
+
+-- -- split windows
+-- opt.splitright = true 
+-- opt.splitbelow = true
+
+-- opt.iskeyword:append("-")
