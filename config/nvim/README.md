@@ -10,8 +10,6 @@ https://www.youtube.com/watch?v=X6AR2RMB5tE
 
 https://www.youtube.com/watch?v=6mxWayq-s9I
 https://www.youtube.com/watch?v=zHTeCSVAFNY
-
-Python
 https://www.youtube.com/watch?v=4BnVeOUeZxc
 
 Repo to inspire from:

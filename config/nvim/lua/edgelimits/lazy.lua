@@ -11,6 +11,21 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local opts = {}
+local config = {
+  { import = "edgelimits.plugins" },
+  { import = "edgelimits.plugins.lsp" },
+}
+local opts = {
+  install = {
+    colorsheme = { "dracula" },
+  },
+  checker = {
+    enable = true,
+    notify = false,
+  },
+  change_detection = {
+    notify = false,
+  }
+}
 
-require("lazy").setup("edgelimits.plugins", opts)
+require("lazy").setup(config, opts)
