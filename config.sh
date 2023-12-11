@@ -66,3 +66,22 @@ fi
 ln -s "$NVIM_SOURCE" "$NVIM_TARGET"
 echo "Symbolic link created: $NVIM_SOURCE -> $NVIM_TARGET"
 
+TMUX_TARGET="$HOME/.tmux.conf"
+TMUX_SOURCE="$PWD/config/tmux/.tmux.conf"
+
+if [ -e "$TMUX_TARGET" ]; then
+    BACKUP_OLD_TMUX="${TMUX_TARGET}($(date +%Y-%m-%d_%H-%M-%S))"
+
+    echo "Found old $TMUX_TARGET."
+    echo "Backing up to $BACKUP_OLD_TMUX."
+    
+    mv "$TMUX_TARGET" "$BACKUP_OLD_TMUX"
+elif [ -L "$TUMUX_TARGET" ]; then
+    echo "Found old symbolic link at $TMUX_TARGET."
+    echo "Removing symbolic link."
+    
+    rm "$TMUX_TARGET"
+fi
+
+ln -s "$TMUX_SOURCE" "$TMUX_TARGET"
+echo "Symbolic link created: $TMUX_SOURCE -> $TMUX_TARGET"

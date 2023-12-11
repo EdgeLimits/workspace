@@ -31,3 +31,7 @@ echo "iTerm2 installed successfully."
 # Install Neovim
 brew install neovim
 echo "Neovim installed successfully."
+
+# Install tmux
+brew install tmux
+echo "TMUX installed successfully"

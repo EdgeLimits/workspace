@@ -15,3 +15,8 @@ https://www.youtube.com/watch?v=4BnVeOUeZxc
 Repo to inspire from:
 https://github.com/josean-dev/dev-environment-files/tree/main/.config/nvim/lua/josean/plugins
 https://github.com/nvim-lua/kickstart.nvim/blob/master/init.lua
+
+
+TMUX
+https://www.youtube.com/watch?v=U-omALWIBos
+https://github.com/josean-dev/dev-environment-files/blob/main/.tmux.conf
