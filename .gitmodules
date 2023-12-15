@@ -4,6 +4,3 @@
 [submodule "setup/powerlevel10k"]
 	path = setup/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
-[submodule "config/tmux/plugins/tmp"]
-	path = config/tmux/plugins/tmp
-	url = https://github.com/tmux-plugins/tpm
