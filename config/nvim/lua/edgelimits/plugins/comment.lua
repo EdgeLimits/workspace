@@ -1,7 +1,11 @@
 return{
   "numToStr/Comment.nvim",
   event = {  "BufReadPre", "BufNewFile" },
-  config = true -- runs require("Comment").setup()
+  -- config = true -- runs require("Comment").setup()
+  config = function()
+    local comment = require("Comment")
+    comment.setup()
+  end,
 }
 
 -- NORMAL mode
