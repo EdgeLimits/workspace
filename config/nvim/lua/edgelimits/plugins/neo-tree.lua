@@ -289,4 +289,4 @@ return {
       vim.keymap.set('n', '<C-g>', ':Neotree float git_status<CR>', {})
       vim.keymap.set('n', '<C-b>', ':Neotree float buffers<CR>', {})
     end,
-} 
+}
