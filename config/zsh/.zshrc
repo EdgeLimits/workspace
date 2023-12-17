@@ -122,3 +122,4 @@ source $WORKSPACE/config/zsh/.p10k.zsh
 
 alias workspace="cd $WORKSPACE"
 alias dev="cd ~/Development"
+
