@@ -33,7 +33,7 @@ local opts = {
 local modules = {
     "options",
     "keymaps",
-
+    "autocmds",
 }
 
 require("lazy").setup(config, opts)
