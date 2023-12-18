@@ -1,10 +1,8 @@
-# EdgeLimits::workspace
+# EdgeLimits' Workspace
 
-MacOS environment. 
-Homebrew + Iterm2 + Oh-My-ZSH + p10k + neovim
+This repository contains various "dotfiles" for my personal development needs.
 
 ## 0.
-
 * git
 * brew
 
@@ -46,3 +44,18 @@ chmod +x setup.sh config.sh
 NVIM formatting:
 
 https://www.youtube.com/watch?v=ybUE4D80XSk
+
+
+https://github.com/Jarmos-san/dotfiles/blob/ab2aaaebf56c1bb0da8a9a36a0bc41675597142a/dotfiles/.config/nvim/lua/keymaps.lua
+
+
+## 2.
+
+Keybindings
+TMUX
+
+<leader>: Ctrl + Space
+Split panes vertically: <leader> -
+Split panes horizontally: <leader> |
+
+Reload tmux config: <leader> r
