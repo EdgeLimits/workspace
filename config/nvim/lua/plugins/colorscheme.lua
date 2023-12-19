@@ -1,3 +1,4 @@
+
 return {
     -- Theme inspired by Atom
     'Mofiqul/dracula.nvim',

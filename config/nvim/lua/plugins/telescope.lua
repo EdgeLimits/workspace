@@ -23,22 +23,23 @@ local function load_gitignore_patterns()
     return patterns
 end
 
-
 return{
   'nvim-telescope/telescope.nvim',
   branch = "0.1.x",
   dependencies = {
     'nvim-lua/plenary.nvim',
-    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+    "nvim-treesitter/nvim-treesitter",
     "nvim-tree/nvim-web-devicons",
+    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+    "neovim/nvim-lspconfig",
   },
   config = function()
     local telescope = require("telescope")
     local actions = require("telescope.actions")
 
     telescope.setup({
-      file_ignore_patterns = load_gitignore_patterns(),
       defaults = {
+        file_ignore_patterns = load_gitignore_patterns(),
         path_display = { "truncate" },
         mappings = {
           i = {
