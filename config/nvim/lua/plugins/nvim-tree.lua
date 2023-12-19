@@ -11,6 +11,9 @@ return {
     vim.g.loaded_netrw = 1
     vim.g.loaded_netrwPlugin = 1
 
+    -- set termguicolors to enable highlight groups
+    vim.opt.termguicolors = true
+
     vim.g.nvim_tree_show_icons = {
       git = 0,
       folders = 1,
@@ -23,10 +26,11 @@ return {
         sorter = "case_sensitive",
       },
       view = {
-        width = 30,
+        width = 40,
       },
       renderer = {
         group_empty = true,
+        indent_width = 2,
         indent_markers = {
           enable = true,
           inline_arrows = true,
@@ -53,6 +57,17 @@ return {
             modified = true,
             diagnostics = true,
             bookmarks = true,
+          },
+          glyphs = {
+            folder = {
+              arrow_open = "",
+              arrow_closed = "",
+              default = "",
+              open = "",
+              empty_open = "",
+              empty = "",
+              symlink = "",
+            },
           },
         },
       },
