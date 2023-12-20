@@ -25,8 +25,8 @@ for FONT_FILE in "${FONT_FILES[@]}"; do
 done
 
 # Install iTerm2
-brew install --cask iterm2
-echo "iTerm2 installed successfully."
+brew install --cask alacritty
+echo "Alacritty installed successfully."
 
 # Install Neovim
 brew install neovim

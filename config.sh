@@ -85,3 +85,29 @@ fi
 
 ln -s "$TMUX_SOURCE" "$TMUX_TARGET"
 echo "Symbolic link created: $TMUX_SOURCE -> $TMUX_TARGET"
+
+# Create a new symbolic link
+ln -s "$NVIM_SOURCE" "$NVIM_TARGET"
+echo "Symbolic link created: $NVIM_SOURCE -> $NVIM_TARGET"
+
+# Alacritty
+
+ALACRITTY_TARGET="$HOME/.alacritty.yml"
+ALACRITTY_SOURCE="$PWD/config/alacritty/.alacritty.yml"
+
+if [ -e "$TMUX_TARGET" ]; then
+    BACKUP_OLD_ALACRITTY="${ALACRITTY_TARGET}($(date +%Y-%m-%d_%H-%M-%S))"
+
+    echo "Found old $ALACRITTY_TARGET"
+    echo "Backing up to $BACKUP_OLD_ALACRITTY."
+    
+    mv "$ALACRITTY_TARGET" "$BACKUP_OLD_ALACRITTY"
+elif [ -L "$ALACRITTY_TARGET" ]; then
+    echo "Found old symbolic link at $ALACRITTY_TARGET."
+    echo "Removing symbolic link."
+    
+    rm "$ALACRITTY_TARGET"
+fi
+
+ln -s "$ALACRITTY_SOURCE" "$ALACRITTY_TARGET"
+echo "Symbolic link created: $ALACRITTY_SOURCE -> $ALACRITTY_TARGET"
