@@ -10,8 +10,8 @@ vim.keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 -- Select all contents of the buffer by pressing "Ctrl + a" like every other IDE
 vim.keymap.set("n", "<C-a>", "ggVG", { desc = "Select all contents in the buffer" })
 
-vim.keymap.set("n", "H", "<Home>", { desc = "Move to the beginning of the line" })
-vim.keymap.set("n", "L", "<End>", { desc = "Move to the end of the line" })
+-- vim.keymap.set("n", "H", "<Home>", { desc = "Move to the beginning of the line" })
+-- vim.keymap.set("n", "L", "<End>", { desc = "Move to the end of the line" })
 
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
