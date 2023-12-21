@@ -140,14 +140,14 @@ font:
     style: BoldItalic
 
   # Point size
-  size: 13.0
+  size: 14.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
   # spacing.
   offset:
    x: 0
-   y: 2
+   y: 5 
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increasing `x` moves the glyph to the
@@ -364,27 +364,21 @@ draw_bold_text_with_bright_colors: true
   # When set to `true`, selected text will be copied to the primary clipboard.
   #save_to_clipboard: false
 
-#cursor:
-  # Cursor style
-  #style:
-    # Cursor shape
-    #
-    # Values for `shape`:
+# Cursor style
+cursor:
+  style:
+    shape: Beam
+    blinking: On
+    #     # Values for `shape`:
     #   - ▇ Block
     #   - _ Underline
     #   - | Beam
-    #shape: Block
-
-    # Cursor blinking state
-    #
     # Values for `blinking`:
     #   - Never: Prevent the cursor from ever blinking
     #   - Off: Disable blinking by default
     #   - On: Enable blinking by default
     #   - Always: Force the cursor to always blink
-    #blinking: Off
-
-  # Vi mode cursor style
+         # Vi mode cursor style
   #
   # If the vi mode cursor style is `None` or not specified, it will fall back to
   # the style of the active value of the normal cursor.
