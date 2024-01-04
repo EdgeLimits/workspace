@@ -19,7 +19,7 @@ local config = {
 
 local opts = {
     install = {
-        -- colorsheme = { "dracula" },
+        colorsheme = { "dracula" },
     },
     checker = {
         enable = true,
