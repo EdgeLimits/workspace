@@ -47,7 +47,7 @@ for _, module in ipairs(modules) do
   end
 end
 
--- vim.cmd.colorscheme("dracula")
+vim.cmd.colorscheme("dracula")
 
 -- INFO: Enable an experimental fast module loader. See the PR for more information:
 vim.loader.enable()

@@ -32,3 +32,16 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous dia
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+
+-- File exploration (Vim-tree, Telescope)
+vim.keymap.set("n", "<leader>fe", "<cmd>NvimTreeToggle<cr>", { desc ="Toogle Nvim Tree" })
+
+vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find files" })
+vim.keymap.set("n", "<leader>fo", "<cmd>Telescope oldfiles<cr>", { desc = "Open recent file" })
+vim.keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string n cwd" })
+-- vim.keymap.set("n", "<leader>fc", <cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
+vim.keymap.set("n", "<leader>fn", "<cmd>enew<cr>", { desc = "Open a new file" })
+vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "Open the help tags menu" })
+
+-- Buffers
+vim.keymap.set("n", "<leader>bl", "<cmd>Telescope buffers<cr>", { desc = "List all buffers" })
