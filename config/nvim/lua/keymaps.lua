@@ -39,9 +39,12 @@ vim.keymap.set("n", "<leader>fe", "<cmd>NvimTreeToggle<cr>", { desc ="Toogle Nvi
 vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find files" })
 vim.keymap.set("n", "<leader>fo", "<cmd>Telescope oldfiles<cr>", { desc = "Open recent file" })
 vim.keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string n cwd" })
--- vim.keymap.set("n", "<leader>fc", <cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
+vim.keymap.set("n", "<leader>fw", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
 vim.keymap.set("n", "<leader>fn", "<cmd>enew<cr>", { desc = "Open a new file" })
 vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "Open the help tags menu" })
 
 -- Buffers
 vim.keymap.set("n", "<leader>bl", "<cmd>Telescope buffers<cr>", { desc = "List all buffers" })
+vim.keymap.set("n", "<leader>bn", "<cmd>bNext<cr>", { desc = "Next buffer" })
+vim.keymap.set("n", "<leader>bp", "<cmd>bPrev<cr>", { desc = "Prev buffer" })
+vim.keymap.set("n", "<leader>bd", "<cmd>bdelete<cr>", { desc = "Delete buffer" })

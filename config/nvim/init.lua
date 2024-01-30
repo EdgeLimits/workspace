@@ -52,7 +52,7 @@ vim.cmd.colorscheme("dracula")
 -- INFO: Enable an experimental fast module loader. See the PR for more information:
 vim.loader.enable()
 
--- vim.api.nvim_set_hl(0, 'FloatBorder', {bg='#3B4252', fg='#5E81AC'})
+-- vim.api.nvim_set_hl(0, 'NextFloatBorder', {bg='#3B4252', fg='#5E81AC'})
 vim.api.nvim_set_hl(0, 'NormalFloat', {bg='#323543'})
 -- vim.api.nvim_set_hl(0, 'TelescopeNormal', {bg='#3B4252'})
 -- vim.api.nvim_set_hl(0, 'TelescopeBorder', {bg='#3B4252'})
