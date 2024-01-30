@@ -20,3 +20,7 @@ https://github.com/nvim-lua/kickstart.nvim/blob/master/init.lua
 TMUX
 https://www.youtube.com/watch?v=U-omALWIBos
 https://github.com/josean-dev/dev-environment-files/blob/main/.tmux.conf
+
+
+Dotfiles
+https://github.com/omerxx/dotfiles/blob/master/nvim/lua/plugins/lazy.lua
