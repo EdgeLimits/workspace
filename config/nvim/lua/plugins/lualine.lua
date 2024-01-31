@@ -9,7 +9,7 @@ return {
       -- component_separators = { left = "|", right = "|"},
       -- section_separators = { left = '', right = ''},
     },
-    sections = {
+    -- sections = {
       -- lualine_x = {
       --   {
       --     require("noice").api.statusline.mode.get,
@@ -19,6 +19,6 @@ return {
       -- },
       -- lualine_a = { "mode" },
       -- lualine_b = { "buffers" },
-    }
+    -- }
   }
 }

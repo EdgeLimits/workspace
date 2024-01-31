@@ -40,7 +40,8 @@ return{
 
     telescope.setup({
       defaults = {
-        file_ignore_patterns = load_gitignore_patterns(),
+        file_ignore_patterns = {},
+        -- file_ignore_patterns = load_gitignore_patterns(),
         path_display = { "truncate" },
         mappings = {
           i = {
