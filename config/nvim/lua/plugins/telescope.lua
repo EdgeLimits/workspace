@@ -40,8 +40,8 @@ return{
 
     telescope.setup({
       defaults = {
-        file_ignore_patterns = {},
         -- file_ignore_patterns = load_gitignore_patterns(),
+        file_ignore_patterns = {},
         path_display = { "truncate" },
         mappings = {
           i = {
@@ -50,6 +50,11 @@ return{
             ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
           },
         },
+      },
+      pickers = {
+        -- find_files = {
+        --   theme = "dropdown",
+        -- }
       },
     })
 

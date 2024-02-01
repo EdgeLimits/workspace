@@ -8,14 +8,14 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 
 -- Select all contents of the buffer by pressing "Ctrl + a" like every other IDE
-vim.keymap.set("n", "<C-a>", "ggVG", { desc = "Select all contents in the buffer" })
+-- vim.keymap.set("n", "<C-a>", "ggVG", { desc = "Select all contents in the buffer" })
 
 -- vim.keymap.set("n", "H", "<Home>", { desc = "Move to the beginning of the line" })
 -- vim.keymap.set("n", "L", "<End>", { desc = "Move to the end of the line" })
 
 -- Remap for dealing with word wrap
-vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+vim.keymap.set('n', 'k', "v:count == 1 ? 'gk' : 'k'", { expr = true, silent = true })
+vim.keymap.set('n', 'j', "v:count == 1 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- increment/decrement numbers
 vim.keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" }) -- increment
@@ -45,8 +45,8 @@ vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "Open
 
 -- Buffers
 vim.keymap.set("n", "<leader>bl", "<cmd>Telescope buffers<cr>", { desc = "List all buffers" })
-vim.keymap.set("n", "<leader>bn", "<cmd>bNext<cr>", { desc = "Next buffer" })
-vim.keymap.set("n", "<leader>bp", "<cmd>bPrev<cr>", { desc = "Prev buffer" })
+vim.keymap.set("n", "<leader>bn", "<cmd>bnext<cr>", { desc = "Next buffer" })
+vim.keymap.set("n", "<leader>bp", "<cmd>bprevious<cr>", { desc = "Previous buffer" })
 vim.keymap.set("n", "<leader>bd", "<cmd>bdelete<cr>", { desc = "Delete buffer" })
 
 -- Registers
