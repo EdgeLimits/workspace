@@ -35,3 +35,7 @@ echo "Neovim installed successfully."
 # Install tmux
 brew install tmux
 echo "TMUX installed successfully"
+
+# Install ripgrep (NVIM telescope dependency) 
+brew install ripgrep
+echot "Ripgrep installed successfully"
