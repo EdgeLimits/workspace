@@ -1,9 +1,12 @@
 return {
-  -- "SmiteshP/nvim-navic",
-  -- config = function()
-  --   -- local lsp = require("neovim/nvim-lspconfig")
-  --   lsp = {
-  --     auto_attach = true,
-  --   }
-  -- end,
+  "SmiteshP/nvim-navic",
+  requires = { "neovim/nvim-lspconfig", module = "lspconfig" },
+  config = function()
+
+    local navic = require("nvim-navic")
+    navic.setup({
+
+    })
+  end,
+  module = "nvim-navic",
 }

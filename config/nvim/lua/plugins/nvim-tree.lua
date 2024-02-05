@@ -22,6 +22,9 @@ return {
     }
 
     nvimtree.setup({
+      update_focused_file = {
+        enable = true,
+      },
       sort = {
         sorter = "case_sensitive",
       },
