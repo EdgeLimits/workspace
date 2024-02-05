@@ -1,3 +1,4 @@
+-- Install LSP packages, for example pip install pyright
 return {
   "williamboman/mason.nvim",
   dependencies = {

@@ -1,13 +1,29 @@
+-- LSP Config takes care of Mason installed LSP packages
+-- https://www.youtube.com/watch?v=4BnVeOUeZxc&t=370s
+-- https://github.com/josean-dev/dev-environment-files/blob/e2ccfd444918260e39927a48ca9edb02939bf433/.config/nvim/lua/josean/plugins/lsp/lspconfig.lua
 return {
   "neovim/nvim-lspconfig",
   event = { "BufReadPre", "BufNewFile" },
   module = "lspconfig",
-  -- dependencies = {
-  --   "hrsh7th/cmp-nvim-lsp",
-  --   { "antosha417/nvim-lsp-file-operations", config = true },
-  -- },
+  dependencies = {
+    "hrsh7th/cmp-nvim-lsp",
+    { "antosha417/nvim-lsp-file-operations", config = true },
+  },
   config = function()
     local lspconfig = require("lspconfig")
+
+    local cmp_nvim_lsp = require("cmp_nvim_lsp")
+    local capabilities = cmp_nvim_lsp.default_capabilities()
+
+    local opts = { noremap = true, silent = true }
+    local on_attach = function(client, bufnr)
+      opts.buffer = bufnr
+
+      vim.keymap.set("n", "<leader>gl", "<cmd>Telescope lsp_references<cr>", { desc = "List LSP preferences" .. opts })
+      vim.keymap.set("n", "<leader>gD", vim.lsp.buf.declaration, { desc = "List LSP preferences" })
+      vim.keymap.set("n", "<leader>gd", "<cmd>Telescope lsp_definitions<cr>", { desc = "List LSP definitions" })
+
+    end
 
 
     -- configure lua server (with special settings)
@@ -35,7 +51,20 @@ return {
     lspconfig["pyright"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
+      filetypes = {"python"},
     })
+
+    -- configure typescript server with plugin
+    lspconfig["tsserver"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+    local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
+    for type, icon in pairs(signs) do
+      local hl = "DiagnosticSign" .. type
+      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+    end
   end,
 }
     --

@@ -1,4 +1,3 @@
--- brew install ripgrep
 -- Large JSON file solution: https://github.com/nvim-telescope/telescope.nvim/issues/269
 -- 
 return{
@@ -10,6 +9,7 @@ return{
     "nvim-tree/nvim-web-devicons",
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     "neovim/nvim-lspconfig",
+    "BurntSushi/ripgrep",
   },
   config = function()
     local telescope = require("telescope")
@@ -49,37 +49,14 @@ return{
           },
         },
       },
-      -- pickers = {
-      --   find_files = {
-      --     theme = "dropdown",
-      --   }
-      -- },
+      pickers = {
+        find_files = {
+          -- hidden = true,
+          -- theme = "dropdown",
+        }
+      },
     })
 
     telescope.load_extension("fzf")
   end,
 }
--- local function load_gitignore_patterns()
---     local patterns = {}
---     local gitignore_path = vim.fn.getcwd() .. '/.gitignore'
---
---     -- Read .gitignore file
---     local file = io.open(gitignore_path, 'r')
---     if file then
---         for line in file:lines() do
---             -- Ignore comments and empty lines
---             if line:match("^%s*#") or line:match("^%s*$") then
---                 goto continue
---             end
---
---             -- Convert glob patterns to Lua patterns
---             local pattern = line:gsub("%.", "%%."):gsub("%*", ".*"):gsub("%?", ".?")
---             table.insert(patterns, pattern)
---
---             ::continue::
---         end
---         file:close()
---     end
---
---     return patterns
--- end
