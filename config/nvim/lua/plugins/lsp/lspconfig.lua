@@ -6,6 +6,7 @@ return {
   event = { "BufReadPre", "BufNewFile" },
   module = "lspconfig",
   dependencies = {
+    -- TODO: understand why do I need theese
     "hrsh7th/cmp-nvim-lsp",
     { "antosha417/nvim-lsp-file-operations", config = true },
   },
@@ -22,7 +23,7 @@ return {
       vim.keymap.set("n", "<leader>gl", "<cmd>Telescope lsp_references<cr>", { desc = "List LSP preferences" .. opts })
       vim.keymap.set("n", "<leader>gD", vim.lsp.buf.declaration, { desc = "List LSP preferences" })
       vim.keymap.set("n", "<leader>gd", "<cmd>Telescope lsp_definitions<cr>", { desc = "List LSP definitions" })
-
+      vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Smart rename" })
     end
 
 
