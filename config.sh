@@ -44,6 +44,25 @@ ln -s "$SOURCE_THEME_LOCATION" "$DESTINATION_THEME_LOCATION"
 echo "Symbolic link created: $DESTINATION_THEME_LOCATION -> $SOURCE_THEME_LOCATION"
 
 
+VIM_TARGET="$HOME/.vimrc"
+VIM_SOURCE="$PWD/config/nvim/vimrc.vim"
+
+if [ -e "$VIM_TARGET" ]; then
+    BACKUP_OLD_VIM="${VIM_TARGET}($(date +%Y-%m-%d_%H-%M-%S))"
+
+    echo "Found old $VIM_TARGET."
+    echo "Backing up to $BACKUP_OLD_VIM."
+    
+    mv "$VIM_TARGET" "$BACKUP_OLD_VIM"
+elif [ -L "$VIM_TARGET" ]; then
+    echo "Found old symbolic link at $VIM_TARGET."
+    echo "Removing symbolic link."
+    
+    rm "$VIM_TARGET"
+fi
+
+ln -s "$VIM_SOURCE" "$VIM_TARGET"
+echo "Symbolic link created: $VIM_SOURCE -> $VIM_TARGET"
 
 NVIM_TARGET="$HOME/.config/nvim"
 NVIM_SOURCE="$PWD/config/nvim"
@@ -62,7 +81,6 @@ elif [ -L "$NVIM_TARGET" ]; then
     rm "$NVIM_TARGET"
 fi
 
-# Create a new symbolic link
 ln -s "$NVIM_SOURCE" "$NVIM_TARGET"
 echo "Symbolic link created: $NVIM_SOURCE -> $NVIM_TARGET"
 
@@ -85,10 +103,6 @@ fi
 
 ln -s "$TMUX_SOURCE" "$TMUX_TARGET"
 echo "Symbolic link created: $TMUX_SOURCE -> $TMUX_TARGET"
-
-# Create a new symbolic link
-ln -s "$NVIM_SOURCE" "$NVIM_TARGET"
-echo "Symbolic link created: $NVIM_SOURCE -> $NVIM_TARGET"
 
 # Alacritty
 

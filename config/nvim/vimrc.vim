@@ -14,6 +14,7 @@ set hlsearch
 
 " Show lineumbers
 set number
+set relativenumber
 
 " Automatically indent on newline
 set autoindent
@@ -23,6 +24,9 @@ set ignorecase
 
 " Always show status line
 set laststatus=2
+
+" Enable mouse mode
+set mouse=a
 
 "" Better movement through wrapped lines
 noremap j gj

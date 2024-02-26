@@ -36,6 +36,9 @@ local modules = {
     "autocmds",
 }
 
+local vimrc = vim.fn.stdpath("config") .. "/vimrc.vim"
+vim.cmd.source(vimrc)
+
 require("lazy").setup(config, opts)
 
 -- Safely load the necessary user-defined Lua modules meant to customise Neovim.
