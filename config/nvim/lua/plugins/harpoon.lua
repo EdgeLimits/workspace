@@ -18,14 +18,12 @@ return {
     vim.keymap.set("n", "<leader>3", function() harpoon:list():select(3) end, { desc = "Harpoon to file 3" })
     vim.keymap.set("n", "<leader>4", function() harpoon:list():select(4) end, { desc = "Harpoon to file 4" })
     vim.keymap.set("n", "<leader>5", function() harpoon:list():select(5) end, { desc = "Harpoon to file 5" })
-    -- Delete current mark
-    vim.keymap.set("n", "<leader>hx", function()
-        local index = harpoon:list():get_index_of(vim.fn.bufname())
-        harpoon:list():rm_file(index)
-    end)
     -- clear all marks
-    vim.keymap.set("n", "<leader>ax", function()
+    vim.keymap.set("n", "<leader>hx", function()
         harpoon:list():clear()
     end)
+    -- navigate list
+    vim.keymap.set("n", "<leader>m", function() harpoon:list():nav_prev() end, { desc = "Harpoon to prev" })
+    vim.keymap.set("n", "<leader>,", function() harpoon:list():nav_next() end, { desc = "Harpoon to next" })
   end,
 }
