@@ -23,7 +23,7 @@ return {
         harpoon:list():clear()
     end)
     -- navigate list
-    vim.keymap.set("n", "<leader>m", function() harpoon:list():nav_prev() end, { desc = "Harpoon to prev" })
-    vim.keymap.set("n", "<leader>,", function() harpoon:list():nav_next() end, { desc = "Harpoon to next" })
+    vim.keymap.set("n", "<leader>m", function() harpoon:list():prev() end, { desc = "Harpoon to the prev" })
+    vim.keymap.set("n", "<leader>,", function() harpoon:list():next() end, { desc = "Harpoon to the next" })
   end,
 }
