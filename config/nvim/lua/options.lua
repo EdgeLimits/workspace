@@ -1,5 +1,10 @@
 local opt = vim.opt
+opt.signcolumn = "yes" -- Allow the sign column to show else it'll keep shifting later on
+opt.iskeyword:append("-") -- Make Neovim recognise dash-seperated words as a single word (JSX, Markdown, etc)
+opt.scrolloff = 6 -- Maintain a buffer of rows between the current row & the either ends of the window
+opt.signcolumn = "yes" -- Allow the sign column to show else it'll keep shifting later on
 
+-- opt.cursorline = true -- Configure Neovim to highlight the current location of the cursor
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
@@ -83,6 +88,7 @@ local opt = vim.opt
 -- opt.sidescroll = 8 -- Enable horinzontal scrolling when word wrap is disabled
 -- opt.breakindent = true -- Enable break indent
 --
+-- opt.signcolumn = "yes" -- Allow the sign column to show else it'll keep shifting later on
 -- opt.iskeyword:append("-") -- Make Neovim recognise dash-seperated words as a single word (JSX, Markdown, etc)
 -- opt.scrolloff = 6 -- Maintain a buffer of rows between the current row & the either ends of the window
 -- opt.number = true -- Enable the current line number to be shown

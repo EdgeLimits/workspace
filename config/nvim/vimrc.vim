@@ -43,8 +43,15 @@ set timeoutlen=300
 set splitright
 set splitbelow
 
+" show cursor line
+set cursorline
+
 set list
 set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
+
+" Make the autocompletion window more accessible
+set completeopt=menu,menuone,noselect
+
 "" Better movement through wrapped lines
 " noremap j gj
 " noremap k gk
