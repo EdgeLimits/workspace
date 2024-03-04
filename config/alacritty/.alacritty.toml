@@ -1,4 +1,5 @@
 live_config_reload = true
+import = ["/Users/Edge/workspace/config/alacritty/dracula.toml"]
 
 [colors]
 draw_bold_text_with_bright_colors = true
@@ -11,7 +12,7 @@ shape = "Beam"
 TERM = "xterm-256color"
 
 [font]
-size = 14.0
+size = 15.0
 
 [font.bold]
 family = "MesloLGS NF"

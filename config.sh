@@ -84,7 +84,8 @@ fi
 ln -s "$NVIM_SOURCE" "$NVIM_TARGET"
 echo "Symbolic link created: $NVIM_SOURCE -> $NVIM_TARGET"
 
-TMUX_TARGET="$HOME/.tmux.conf"
+# TMUX_TARGET="$HOME/.tmux.conf"
+TMUX_TARGET="$HOME/.config/tmux/.tmux.conf"
 TMUX_SOURCE="$PWD/config/tmux/.tmux.conf"
 
 if [ -e "$TMUX_TARGET" ]; then
