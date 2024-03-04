@@ -106,8 +106,8 @@ echo "Symbolic link created: $TMUX_SOURCE -> $TMUX_TARGET"
 
 # Alacritty
 
-ALACRITTY_TARGET="$HOME/.alacritty.yml"
-ALACRITTY_SOURCE="$PWD/config/alacritty/.alacritty.yml"
+ALACRITTY_TARGET="$HOME/.alacritty.toml"
+ALACRITTY_SOURCE="$PWD/config/alacritty/.alacritty.toml"
 
 if [ -e "$TMUX_TARGET" ]; then
     BACKUP_OLD_ALACRITTY="${ALACRITTY_TARGET}($(date +%Y-%m-%d_%H-%M-%S))"
