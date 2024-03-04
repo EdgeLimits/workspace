@@ -14,10 +14,13 @@ vim.g.loaded_node_provider = 0
 
 local config = {
     { import = "plugins" },
+    { import = "plugins.lsp" },
 }
 
 local opts = {
-    install = {},
+    install = {
+        colorsheme = { "dracula" },
+    },
     checker = {
         enable = true,
         notify = false,
@@ -28,6 +31,9 @@ local opts = {
 }
 
 local modules = {
+    "options",
+    "keymaps",
+    "autocmds",
 }
 
 local vimrc = vim.fn.stdpath("config") .. "/vimrc.vim"
@@ -44,7 +50,13 @@ for _, module in ipairs(modules) do
 end
 
 vim.o.termguicolors = true
-vim.cmd.colorscheme "catppuccin-macchiato"
+vim.cmd.colorscheme("dracula")
 
 -- INFO: Enable an experimental fast module loader. See the PR for more information:
 vim.loader.enable()
+
+-- vim.api.nvim_set_hl(0, 'NextFloatBorder', {bg='#3B4252', fg='#5E81AC'})
+vim.api.nvim_set_hl(0, 'NormalFloat', {bg='#323543'})
+-- vim.api.nvim_set_hl(0, 'TelescopeNormal', {bg='#3B4252'})
+-- vim.api.nvim_set_hl(0, 'TelescopeBorder', {bg='#3B4252'})
+

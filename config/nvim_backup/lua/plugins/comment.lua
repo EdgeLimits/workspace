@@ -17,4 +17,3 @@ return{
 `gc[count]{motion}` - (Op-pending) Toggles the region using linewise comment
 `gb[count]{motion}` - (Op-pending) Toggles the region using blockwise comment ]]
 
-

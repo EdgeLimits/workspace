@@ -5,10 +5,10 @@ return{
   branch = "0.1.x",
   dependencies = {
     'nvim-lua/plenary.nvim',
---    "nvim-treesitter/nvim-treesitter",
---    "nvim-tree/nvim-web-devicons",
+    "nvim-treesitter/nvim-treesitter",
+    "nvim-tree/nvim-web-devicons",
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
---    "neovim/nvim-lspconfig",
+    "neovim/nvim-lspconfig",
     "BurntSushi/ripgrep",
   },
   config = function()
@@ -52,24 +52,10 @@ return{
       pickers = {
         find_files = {
           hidden = true,
-          previewer = false,
-          theme = "dropdown",
-        },
-        live_grep = {
-          hidden = true,
-        },
-        grep_string = {
-          hidden = true,
-        },
+          -- theme = "dropdown",
+        }
       },
     })
-
-    vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find files" })
-    -- vim.keymap.set("n", "<leader>fo", "<cmd>Telescope oldfiles<cr>", { desc = "Open recent file" })
-    -- vim.keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string n cwd" })
-    -- vim.keymap.set("n", "<leader>fw", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
-    -- vim.keymap.set("n", "<leader>fn", "<cmd>enew<cr>", { desc = "Open a new file" })
-    -- vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "Open the help tags menu" })
 
     telescope.load_extension("fzf")
   end,
