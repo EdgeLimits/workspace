@@ -5,8 +5,9 @@ return{
   branch = "0.1.x",
   dependencies = {
     'nvim-lua/plenary.nvim',
---    "nvim-treesitter/nvim-treesitter",
+    'catppuccin',
 --    "nvim-tree/nvim-web-devicons",
+--    "nvim-treesitter/nvim-treesitter",
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 --    "neovim/nvim-lspconfig",
     "BurntSushi/ripgrep",
@@ -64,10 +65,31 @@ return{
       },
     })
 
+
+    local colors = require("catppuccin.palettes").get_palette()
+    local TelescopeColor = {
+      -- TelescopeMatching = { fg = colors.flamingo },
+      -- TelescopeSelection = { fg = colors.text, bg = colors.surface0, bold = true },
+      -- TelescopePromptPrefix = { bg = colors.surface0 },
+      -- TelescopePromptNormal = { bg = colors.surface0 },
+      -- TelescopeResultsNormal = { bg = colors.mantle },
+      -- TelescopePreviewNormal = { bg = colors.mantle },
+      -- TelescopePromptBorder = { bg = colors.surface0, fg = colors.surface0 },
+      -- TelescopeResultsBorder = { bg = colors.mantle, fg = colors.mantle },
+      -- TelescopePreviewBorder = { bg = colors.mantle, fg = colors.mantle },
+      -- TelescopePromptTitle = { bg = colors.pink, fg = colors.mantle },
+      -- TelescopeResultsTitle = { fg = colors.mantle },
+      -- TelescopePreviewTitle = { bg = colors.green, fg = colors.mantle },
+    }
+
+    for hl, col in pairs(TelescopeColor) do
+      vim.api.nvim_set_hl(0, hl, col)
+    end
+
     vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find files" })
     -- vim.keymap.set("n", "<leader>fo", "<cmd>Telescope oldfiles<cr>", { desc = "Open recent file" })
-    -- vim.keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string n cwd" })
-    -- vim.keymap.set("n", "<leader>fw", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
+    vim.keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string n cwd" })
+    vim.keymap.set("n", "<leader>fw", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
     -- vim.keymap.set("n", "<leader>fn", "<cmd>enew<cr>", { desc = "Open a new file" })
     -- vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "Open the help tags menu" })
 
