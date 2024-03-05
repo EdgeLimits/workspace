@@ -11,6 +11,8 @@ vim.g.loaded_ruby_provider = 0
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_node_provider = 0
 
+-- INFO: Enable an experimental fast module loader. See the PR for more information:
+vim.loader.enable()
 
 local config = {
     { import = "plugins" },
@@ -28,6 +30,7 @@ local opts = {
 }
 
 local modules = {
+  "keymaps",
 }
 
 local vimrc = vim.fn.stdpath("config") .. "/vimrc.vim"
@@ -46,5 +49,3 @@ end
 vim.o.termguicolors = true
 vim.cmd.colorscheme "catppuccin-macchiato"
 
--- INFO: Enable an experimental fast module loader. See the PR for more information:
-vim.loader.enable()
