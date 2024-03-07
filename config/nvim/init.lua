@@ -19,7 +19,9 @@ local config = {
 }
 
 local opts = {
-    install = {},
+    install = {
+      theme = "dracula",
+    },
     checker = {
         enable = true,
         notify = false,
@@ -47,7 +49,8 @@ for _, module in ipairs(modules) do
 end
 
 vim.o.termguicolors = true
-vim.cmd.colorscheme "catppuccin-macchiato"
+vim.cmd.colorscheme "dracula"
+-- vim.cmd.colorscheme "catppuccin-macchiato"
 
 -- Set listchars
 vim.o.listchars = 'nbsp:␣,eol:↲,tab:»\\ ,extends:›,precedes:‹,trail:•'

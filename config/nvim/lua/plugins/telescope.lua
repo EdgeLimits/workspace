@@ -5,7 +5,7 @@ return{
   branch = "0.1.x",
   dependencies = {
     'nvim-lua/plenary.nvim',
-    'catppuccin',
+    'dracula',
 --    "nvim-tree/nvim-web-devicons",
 --    "nvim-treesitter/nvim-treesitter",
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
@@ -66,8 +66,8 @@ return{
     })
 
 
-    local colors = require("catppuccin.palettes").get_palette()
-    local TelescopeColor = {
+    -- local colors = require("catppuccin.palettes").get_palette()
+    -- local TelescopeColor = {
       -- TelescopeMatching = { fg = colors.flamingo },
       -- TelescopeSelection = { fg = colors.text, bg = colors.surface0, bold = true },
       -- TelescopePromptPrefix = { bg = colors.surface0 },
@@ -80,11 +80,11 @@ return{
       -- TelescopePromptTitle = { bg = colors.pink, fg = colors.mantle },
       -- TelescopeResultsTitle = { fg = colors.mantle },
       -- TelescopePreviewTitle = { bg = colors.green, fg = colors.mantle },
-    }
+    -- }
 
-    for hl, col in pairs(TelescopeColor) do
-      vim.api.nvim_set_hl(0, hl, col)
-    end
+    -- for hl, col in pairs(TelescopeColor) do
+    --   vim.api.nvim_set_hl(0, hl, col)
+    -- end
 
     vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find files" })
     -- vim.keymap.set("n", "<leader>fo", "<cmd>Telescope oldfiles<cr>", { desc = "Open recent file" })

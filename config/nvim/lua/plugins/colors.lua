@@ -1,4 +1,3 @@
--- https://github.com/catppuccin/nvim
 return { 
-  "catppuccin/nvim", name = "catppuccin", priority = 1000
+  "Mofiqul/dracula.nvim", name = "dracula", priority = 1000,
 }
