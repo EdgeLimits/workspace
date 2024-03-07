@@ -105,6 +105,7 @@ ln -s "$TMUX_SOURCE" "$TMUX_TARGET"
 echo "Symbolic link created: $TMUX_SOURCE -> $TMUX_TARGET"
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+# run <leader>I to install tmux packages
 
 # Alacritty
 
