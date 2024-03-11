@@ -106,7 +106,8 @@ return { -- LSP Configuration & Plugins
     local servers = {
       -- clangd = {},
       -- gopls = {},
-      pyright = {},
+      -- pyright = {},
+      pylsp = {},
       -- rust_analyzer = {},
       -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
       --
@@ -158,7 +159,8 @@ return { -- LSP Configuration & Plugins
     vim.list_extend(ensure_installed, {
       "stylua", -- Used to format lua code
       "lua_ls",
-      "pyright",
+      "pylsp",
+      -- "pyright",
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
