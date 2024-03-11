@@ -34,16 +34,18 @@ style = "Regular"
 
 [font.offset]
 x = 0
-y = 6
+y = 2
 
 [scrolling]
 history = 10000
 multiplier = 3
 
 [window]
-decorations = "Full"
+decorations = "Buttonless"
 dynamic_title = true
+dynamic_padding = true
 
 [window.padding]
-x = 8
-y = 4
+x = 2
+y = 2
+
