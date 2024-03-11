@@ -7,7 +7,7 @@ return {
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     ---@diagnostic disable-next-line: missing-fields
     require('nvim-treesitter.configs').setup {
-      ensure_installed = { 
+      ensure_installed = {
         "astro",
         "css",
         "dockerfile",
