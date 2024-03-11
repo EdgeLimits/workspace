@@ -8,7 +8,6 @@ return { -- LSP Configuration & Plugins
     "nvim-cmp",
 
     -- Useful status updates for LSP.
-    -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
     { 'j-hui/fidget.nvim', opts = {} },
   },
   config = function()
@@ -20,8 +19,6 @@ return { -- LSP Configuration & Plugins
           vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
         end
 
-        -- Jump to the definition of the word under your cursor.
-        --  This is where a variable was first declared, or where a function is defined, etc.
         --  To jump back, press <C-T>.
         map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
 
