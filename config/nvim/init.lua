@@ -20,7 +20,7 @@ local config = {
 
 local opts = {
     install = {
-      theme = "dracula",
+      theme = "catppuccin",
     },
     checker = {
         enable = true,
@@ -50,7 +50,8 @@ for _, module in ipairs(modules) do
 end
 
 vim.o.termguicolors = true
-vim.cmd.colorscheme "dracula"
+-- vim.cmd.colorscheme "catppuccin-macchiato"
+vim.cmd.colorscheme "catppuccin-mocha"
 
 
 

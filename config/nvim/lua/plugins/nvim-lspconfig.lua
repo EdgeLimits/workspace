@@ -1,4 +1,4 @@
-return { -- LSP Configuration & Plugins
+return { -- LSP Configuration & Pluginslsp
   'neovim/nvim-lspconfig',
   dependencies = {
     -- Automatically install LSPs and related tools to stdpath for neovim
@@ -101,14 +101,47 @@ return { -- LSP Configuration & Plugins
     --  - settings (table): Override the default settings passed when initializing the server.
     --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
     local servers = {
-      -- clangd = {},
-      -- gopls = {},
-      -- pyright = {},
-      pylsp = {},
-      -- Some languages (like typescript) have entire language plugins that can be useful:
-      --    https://github.com/pmizio/typescript-tools.nvim
-      --
-      -- But for many setups, the LSP (`tsserver`) will work just fine
+      pyright = {
+        settings = {
+          pyright = {
+            -- Using Ruff's import organizer
+            disableOrganizeImports = true,
+          },
+          python = {
+            analysis = {
+              -- Ignore all files for analysis to exclusively use Ruff for linting
+              ignore = { '*' },
+            },
+          },
+        },
+      },
+      -- pylsp = {},
+      ruff_lsp = {
+        commands = {
+          RuffAutofix = {
+            function()
+              vim.lsp.buf.execute_command {
+                command = 'ruff.applyAutofix',
+                arguments = {
+                  { uri = vim.uri_from_bufnr(0) },
+                },
+              }
+            end,
+            description = 'Ruff: Fix all auto-fixable problems',
+          },
+          RuffOrganizeImports = {
+            function()
+              vim.lsp.buf.execute_command {
+                command = 'ruff.applyOrganizeImports',
+                arguments = {
+                  { uri = vim.uri_from_bufnr(0) },
+                },
+              }
+            end,
+            description = 'Ruff: Format imports',
+          },
+        },
+      },
       tsserver = {},
       lua_ls = {
         -- cmd = {...},
@@ -146,8 +179,9 @@ return { -- LSP Configuration & Plugins
       "astro-language-server",
       "stylua", -- Used to format lua code
       "lua_ls",
-      "pylsp",
+      -- "pylsp",
       -- "pyright",
+      "ruff_lsp",
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 

@@ -1,6 +1,6 @@
 live_config_reload = true
-import = ["/Users/Edge/workspace/config/alacritty/dracula.toml"]
-# import = ["/Users/Edge/workspace/config/alacritty/catppucin-mocha.toml"]
+# import = ["/Users/Edge/workspace/config/alacritty/dracula.toml"]
+import = ["/Users/Edge/workspace/config/alacritty/catppucin-mocha.toml"]
 # import = ["/Users/Edge/workspace/config/alacritty/catppucin-macchiato.toml"]
 
 [colors]

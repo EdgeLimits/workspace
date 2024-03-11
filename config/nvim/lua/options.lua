@@ -2,6 +2,7 @@
 -- Set listchars
 vim.o.listchars = 'nbsp:␣,eol:↲,tab:»\\ ,extends:›,precedes:‹,trail:•'
 
+vim.opt.clipboard = 'unnamedplus'
 -- Set showbreak
 vim.o.showbreak = '↳ '
 
