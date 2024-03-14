@@ -66,25 +66,40 @@ return{
     })
 
 
-    -- local colors = require("catppuccin.palettes").get_palette()
-    -- local TelescopeColor = {
-      -- TelescopeMatching = { fg = colors.flamingo },
-      -- TelescopeSelection = { fg = colors.text, bg = colors.surface0, bold = true },
-      -- TelescopePromptPrefix = { bg = colors.surface0 },
-      -- TelescopePromptNormal = { bg = colors.surface0 },
-      -- TelescopeResultsNormal = { bg = colors.mantle },
-      -- TelescopePreviewNormal = { bg = colors.mantle },
-      -- TelescopePromptBorder = { bg = colors.surface0, fg = colors.surface0 },
-      -- TelescopeResultsBorder = { bg = colors.mantle, fg = colors.mantle },
-      -- TelescopePreviewBorder = { bg = colors.mantle, fg = colors.mantle },
-      -- TelescopePromptTitle = { bg = colors.pink, fg = colors.mantle },
-      -- TelescopeResultsTitle = { fg = colors.mantle },
-      -- TelescopePreviewTitle = { bg = colors.green, fg = colors.mantle },
-    -- }
+    local cp = require("catppuccin.palettes").get_palette()
+    local TelescopeColor = {
+      -- TelescopeBorder = { fg = cp.blue },
+      -- TelescopeSelectionCaret = { fg = cp.flamingo },
+      -- TelescopeSelection = { fg = cp.text, bg = cp.surface0, bold = true},
+      -- TelescopeMatching = { fg = cp.blue },
+      -- TelescopePromptPrefix = { bg = cp.crust },
+      -- TelescopePromptNormal = { bg = cp.crust},
+      -- TelescopeResultsNormal = { bg = cp.mantle},
+      -- TelescopePreviewNormal = { bg = cp.crust },
+      -- TelescopePromptBorder = { bg = cp.crust, fg = cp.crust },
+      -- TelescopeResultsBorder = { bg = cp.mantle, fg = cp.crust },
+      -- TelescopePreviewBorder = { bg = cp.crust, fg = cp.crust },
+      -- TelescopePromptTitle = { fg = cp.crust },
+      -- TelescopeResultsTitle = { fg = cp.text },
+      -- TelescopePreviewTitle = { fg = cp.crust },
 
-    -- for hl, col in pairs(TelescopeColor) do
-    --   vim.api.nvim_set_hl(0, hl, col)
-    -- end
+      TelescopeMatching = { fg = cp.flamingo },
+      TelescopeSelection = { fg = cp.text, bg = cp.surface0, bold = true },
+      TelescopePromptPrefix = { bg = cp.surface0 },
+      TelescopePromptNormal = { bg = cp.surface0 },
+      TelescopeResultsNormal = { bg = cp.mantle },
+      TelescopePreviewNormal = { bg = cp.mantle },
+      TelescopePromptBorder = { bg = cp.surface0, fg = cp.surface0 },
+      TelescopeResultsBorder = { bg = cp.mantle, fg = cp.mantle },
+      TelescopePreviewBorder = { bg = cp.mantle, fg = cp.mantle },
+      TelescopePromptTitle = { bg = cp.pink, fg = cp.mantle },
+      TelescopeResultsTitle = { fg = cp.mantle },
+      TelescopePreviewTitle = { bg = cp.green, fg = cp.mantle },
+    }
+
+    for hl, col in pairs(TelescopeColor) do
+      vim.api.nvim_set_hl(0, hl, col)
+    end
 
     vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find files" })
     -- vim.keymap.set("n", "<leader>fo", "<cmd>Telescope oldfiles<cr>", { desc = "Open recent file" })
