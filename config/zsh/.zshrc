@@ -121,3 +121,4 @@ source $ZSH/oh-my-zsh.sh
 alias workspace="cd $WORKSPACE"
 alias dev="cd ~/Development"
 
+alias obsidian="cd ~/Obsidian/EdgeVault" 

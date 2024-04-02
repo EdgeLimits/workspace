@@ -39,3 +39,7 @@ echo "TMUX installed successfully"
 # Install ripgrep (NVIM telescope dependency) 
 brew install ripgrep
 echot "Ripgrep installed successfully"
+
+# Install lazygit
+brew install lazygit
+echo "Lazygit installed successfully"
