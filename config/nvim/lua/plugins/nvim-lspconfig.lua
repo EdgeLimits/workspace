@@ -11,7 +11,13 @@ return { -- LSP Configuration & Pluginslsp
     { 'j-hui/fidget.nvim', opts = {} },
   },
   config = function()
+    local navic = require("nvim-navic")
 
+    require("lspconfig").clangd.setup {
+      on_attach = function(client, bufnr)
+        navic.attach(client, bufnr)
+      end
+    }
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('workspace-lsp-attach', { clear = true }),
       callback = function(event)
