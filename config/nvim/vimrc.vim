@@ -56,9 +56,10 @@ set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
 set completeopt=menu,menuone,noselect
 
 "" Better movement through wrapped lines
-" noremap j gj
-" noremap k gk
+noremap j gj
+noremap k gk
 
+set scrolloff=8
 " Better Netrw
 " let g:netrw_banner=0 " Hide banner
 " let g:netrw_liststyle=3 " Tree-style view
