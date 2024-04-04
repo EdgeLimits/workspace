@@ -37,7 +37,8 @@ return {
       sections = {
         lualine_a = {'mode'},
         lualine_b = {'branch', 'diff', 'diagnostics'},
-        lualine_c = {'filename'},
+        lualine_c = {lsp_names},
+        -- lualine_c = {'filename'},
         lualine_x = {'encoding', 'fileformat', 'filetype'},
         lualine_y = {'searchcount', 'progress'},
         lualine_z = {'location'},
@@ -50,16 +51,17 @@ return {
         lualine_y = {},
         lualine_z = {},
       },
-      tabline = {
-        lualine_a = {},
-        lualine_b = {},
-        lualine_c = {},
-        lualine_x = {},
-        lualine_y = {},
-        lualine_z = {},
-      },
+      -- tabline = {
+      --   lualine_a = {},
+      --   lualine_b = {},
+      --   lualine_c = {},
+      --   lualine_x = {},
+      --   lualine_y = {},
+      --   lualine_z = {},
+      -- },
       winbar = {
-        lualine_a = { lsp_names },
+        -- lualine_a = { lsp_names },
+        lualine_a = {},
         lualine_b = {},
         lualine_c = {
           {
@@ -72,8 +74,8 @@ return {
         },
         lualine_x = {},
         lualine_y = {},
-        lualine_z = {},
-        -- lualine_z = { "filename" },
+        -- lualine_z = {},
+        lualine_z = { "filename" },
       },
       inactive_winbar = {},
       extensions = {},
