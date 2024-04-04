@@ -1,56 +1,82 @@
 return {
   "nvim-lualine/lualine.nvim",
-  opts = {
-    options = {
-      icons_enabled = true,
-      theme = "catppuccin-mocha",
-      component_separators = "|",
-      section_separators = "",
-    },
-    sections = {
-      lualine_a = {'mode'},
-      lualine_b = {'branch', 'diff', 'diagnostics'},
-      lualine_c = {'filename'},
-      lualine_x = {'encoding', 'fileformat', 'filetype'},
-      lualine_y = {'searchcount', 'progress'},
-      lualine_z = {'location'},
-    },
-    inactive_sections = {
-      lualine_a = {},
-      lualine_b = {},
-      lualine_c = {'filename'},
-      lualine_x = {'location'},
-      lualine_y = {},
-      lualine_z = {},
-    },
-    -- tabline = {
-      -- lualine_a = {},
-      -- lualine_b = {},
-      -- lualine_c = {},
-      -- lualine_x = {},
-      -- lualine_y = {},
-      -- lualine_z = {},
-    -- },
-    -- winbar = {
-    --   lualine_a = {'buffers'},
-    --   lualine_b = {},
-    --   lualine_c = {},
-    --   lualine_x = {},
-    --   lualine_y = {},
-    --   lualine_z = {},
-    -- },
-    inactive_winbar = {},
-    extensions = {},
-    -- sections = {
-      -- lualine_x = {
-      --   {
-      --     require("noice").api.statusline.mode.get,
-      --     cond = require("noice").api.statusline.mode.has,
-      --     color = { fg = "#ff9e64" },
-      --   }
-      -- },
-      -- lualine_a = { "mode" },
-      -- lualine_b = { "buffers" },
-    -- }
-  }
+  dependencies = {
+    "SmiteshP/nvim-navic",
+  },
+  config = function()
+    local lualine = require("lualine")
+    local lsp_names = function()
+      local clients = {}
+      for _, client in ipairs(vim.lsp.get_active_clients({ bufnr = 0 })) do
+        table.insert(clients, client.name)
+      end
+      local ft = vim.api.nvim_eval("&filetype")
+      local linters = require("lint").linters_by_ft[ft]
+      for _, linter in ipairs(linters ~= nil and linters or {}) do
+        table.insert(clients, linter)
+      end
+      local filetype = require("conform").formatters_by_ft[ft]
+      for _, formatter in ipairs(filetype or {}) do
+        if type(formatter) == "table" then
+          table.insert(clients, "{" .. table.concat(formatter, ",") .. "}")
+        else
+          table.insert(clients, formatter)
+        end
+      end
+      return #clients == 0 and "" or " " .. table.concat(clients, ", ")
+    end
+
+    -- local navic = require("nvim-navic")
+    lualine.setup {
+      options = {
+        icons_enabled = true,
+        theme = "catppuccin-mocha",
+        component_separators = "|",
+        section_separators = "",
+      },
+      sections = {
+        lualine_a = {'mode'},
+        lualine_b = {'branch', 'diff', 'diagnostics'},
+        lualine_c = {'filename'},
+        lualine_x = {'encoding', 'fileformat', 'filetype'},
+        lualine_y = {'searchcount', 'progress'},
+        lualine_z = {'location'},
+      },
+      inactive_sections = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = {'filename'},
+        lualine_x = {'location'},
+        lualine_y = {},
+        lualine_z = {},
+      },
+      tabline = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = {},
+        lualine_x = {},
+        lualine_y = {},
+        lualine_z = {},
+      },
+      winbar = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = {
+          {
+            "navic",
+            color_correction = "static",
+            navic_opts = {
+              highlight = true,
+            },
+          }
+        },
+        lualine_x = {},
+        lualine_y = {},
+        lualine_z = {},
+        -- lualine_z = { "filename" },
+      },
+      inactive_winbar = {},
+      extensions = {},
+    }
+  end,
 }
