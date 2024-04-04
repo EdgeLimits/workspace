@@ -6,8 +6,8 @@ return {
     config = function()
       require("nvim-navic").setup({
         lsp = {
-          auto_attach = false,
-          preference = nil,
+          auto_attach = true,
+          -- preference = nil,
         },
     })
     end,

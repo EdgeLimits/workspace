@@ -59,7 +59,7 @@ return {
         lualine_z = {},
       },
       winbar = {
-        lualine_a = {},
+        lualine_a = { lsp_names },
         lualine_b = {},
         lualine_c = {
           {
