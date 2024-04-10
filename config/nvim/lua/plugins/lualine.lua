@@ -37,20 +37,20 @@ return {
       sections = {
         lualine_a = {'mode'},
         lualine_b = {'branch', 'diff', 'diagnostics'},
-        lualine_c = {lsp_names},
+        lualine_c = {},
         -- lualine_c = {'filename'},
         lualine_x = {'encoding', 'fileformat', 'filetype'},
         lualine_y = {'searchcount', 'progress'},
         lualine_z = {'location'},
       },
-      inactive_sections = {
-        lualine_a = {},
-        lualine_b = {},
-        lualine_c = {'filename'},
-        lualine_x = {'location'},
-        lualine_y = {},
-        lualine_z = {},
-      },
+      -- inactive_sections = {
+      --   lualine_a = {},
+      --   lualine_b = {},
+      --   lualine_c = {'filename'},
+      --   lualine_x = {'location'},
+      --   lualine_y = {},
+      --   lualine_z = {},
+      -- },
       -- tabline = {
       --   lualine_a = {},
       --   lualine_b = {},
@@ -60,9 +60,8 @@ return {
       --   lualine_z = {},
       -- },
       winbar = {
-        -- lualine_a = { lsp_names },
         lualine_a = {},
-        lualine_b = {},
+        lualine_b = { {"filename", path = 3} },
         lualine_c = {
           {
             "navic",
@@ -74,8 +73,7 @@ return {
         },
         lualine_x = {},
         lualine_y = {},
-        -- lualine_z = {},
-        lualine_z = { "filename" },
+        lualine_z = {lsp_names},
       },
       inactive_winbar = {},
       extensions = {},
