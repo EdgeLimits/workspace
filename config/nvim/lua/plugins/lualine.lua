@@ -61,7 +61,7 @@ return {
       -- },
       winbar = {
         lualine_a = {},
-        lualine_b = { {"filename", path = 3} },
+        lualine_b = {},
         lualine_c = {
           {
             "navic",
@@ -72,8 +72,22 @@ return {
           }
         },
         lualine_x = {},
-        lualine_y = {},
-        lualine_z = {lsp_names},
+        lualine_y = { {
+          "filename",
+          path = 1,
+          file_status = false,
+        } },
+        lualine_z = {{
+          "filename",
+          path = 0,
+          file_status = true,
+          symbols = {
+            modified = '[+]',      -- Text to show when the file is modified.
+            readonly = '[-]',      -- Text to show when the file is non-modifiable or readonly.
+            unnamed = '[No Name]', -- Text to show for unnamed buffers.
+            newfile = '[New]',     -- Text to show for newly created file before first write
+          }
+        }},
       },
       inactive_winbar = {},
       extensions = {},
