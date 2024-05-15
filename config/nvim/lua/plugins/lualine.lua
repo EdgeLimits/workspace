@@ -90,7 +90,37 @@ return {
           }
         }},
       },
-      inactive_winbar = {},
+      inactive_winbar = {
+        lualine_c = {},
+        lualine_b = {},
+        lualine_a = {
+          {
+            "navic",
+            color_corection = nil,
+            navic_opts = {
+              highlight = true,
+              draw_empty = true,
+            },
+          }
+        },
+        lualine_x = {},
+        lualine_y = { {
+          "filename",
+          path = 1,
+          file_status = false,
+        } },
+        lualine_z = {{
+          "filename",
+          path = 0,
+          file_status = true,
+          symbols = {
+            modified = '[+]',      -- Text to show when the file is modified.
+            readonly = '[-]',      -- Text to show when the file is non-modifiable or readonly.
+            unnamed = '[No Name]', -- Text to show for unnamed buffers.
+            newfile = '[New]',     -- Text to show for newly created file before first write
+          }
+        }},
+      },
       extensions = {},
     }
   end,
