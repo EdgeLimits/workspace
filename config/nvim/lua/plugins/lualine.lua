@@ -60,14 +60,15 @@ return {
       --   lualine_z = {},
       -- },
       winbar = {
-        lualine_a = {},
+        lualine_c = {},
         lualine_b = {},
-        lualine_c = {
+        lualine_a = {
           {
             "navic",
-            color_correction = "static",
+            color_corection = nil,
             navic_opts = {
               highlight = true,
+              draw_empty = true,
             },
           }
         },
