@@ -49,6 +49,10 @@ decorations = "Buttonless"
 dynamic_title = true
 dynamic_padding = true
 
+[window.dimensions]
+columns = 240
+lines = 60
+
 [window.padding]
 x = 1
 y = 0
