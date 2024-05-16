@@ -1,5 +1,5 @@
 return {
-  "SmiteshP/nvim-navic",
+  "smiteshp/nvim-navic",
     dependencies = {
       "neovim/nvim-lspconfig",
     },
