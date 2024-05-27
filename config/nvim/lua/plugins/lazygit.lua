@@ -10,8 +10,14 @@ return {
   -- optional for floating window border decoration
   dependencies = {
     "nvim-lua/plenary.nvim",
+    "nvim-telescope/telescope.nvim",
   },
   config = function ()
-    vim.keymap.set("n", "<leader>gg", "<cmd>LazyGit<cr>", { desc = "Open LazyGit" })
+    require("telescope").load_extension("lazygit")
+    -- vim.g.lazygit_floating_window_border_chars = {'╭','─', '╮', '│', '╯','─', '╰', '│'}
+    vim.g.lazygit_floating_window_border_chars = {'','', '', '', '','', '', ''}
+
+    -- another keymap has been set in vim.src
+    vim.keymap.set("n", "<leader>lg", "<cmd>LazyGit<cr>", { desc = "Open LazyGit" })
   end,
 }

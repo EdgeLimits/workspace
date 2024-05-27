@@ -3,6 +3,7 @@ syntax on
 
 nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
 nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
+nnoremap <silent> <leader>lg :LazyGit<CR>
 
 set tabstop=2 softtabstop=0 shiftwidth=2 smarttab
 
