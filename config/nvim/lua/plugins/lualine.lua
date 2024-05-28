@@ -61,8 +61,7 @@ return {
       -- },
       winbar = {
         lualine_c = {},
-        lualine_b = {},
-        lualine_a = {
+        lualine_b = {
           {
             "navic",
             color_corection = nil,
@@ -72,13 +71,7 @@ return {
             },
           }
         },
-        lualine_x = {},
-        lualine_y = { {
-          "filename",
-          path = 1,
-          file_status = false,
-        } },
-        lualine_z = {{
+        lualine_a = {{
           "filename",
           path = 0,
           file_status = true,
@@ -89,6 +82,13 @@ return {
             newfile = '',     -- Text to show for newly created file before first write
           }
         }},
+        lualine_x = {},
+        lualine_y = {{
+          "filename",
+          path = 1,
+          file_status = false,
+        }},
+        lualine_z = {},
       },
       inactive_winbar = {
         lualine_c = {},
