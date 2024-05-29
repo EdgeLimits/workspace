@@ -27,5 +27,3 @@ vim.keymap.set("n", "<leader>-", "<cmd>Hex<cr>", { desc = "Split window horizont
 vim.keymap.set('n', 'k', "v:count == 1 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 1 ? 'gj' : 'j'", { expr = true, silent = true })
 
--- File exploration (Netrw)
-vim.keymap.set("n", "<leader>fe", "<cmd>Explore<cr>", { desc ="Open Netrw" })
