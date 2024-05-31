@@ -18,6 +18,11 @@ return {
     vim.keymap.set("n", "<leader>3", function() harpoon:list():select(3) end, { desc = "Harpoon to file 3" })
     vim.keymap.set("n", "<leader>4", function() harpoon:list():select(4) end, { desc = "Harpoon to file 4" })
     vim.keymap.set("n", "<leader>5", function() harpoon:list():select(5) end, { desc = "Harpoon to file 5" })
+    vim.keymap.set("n", "<leader>6", function() harpoon:list():select(6) end, { desc = "Harpoon to file 6" })
+    vim.keymap.set("n", "<leader>7", function() harpoon:list():select(7) end, { desc = "Harpoon to file 7" })
+    vim.keymap.set("n", "<leader>8", function() harpoon:list():select(8) end, { desc = "Harpoon to file 8" })
+    vim.keymap.set("n", "<leader>9", function() harpoon:list():select(9) end, { desc = "Harpoon to file 9" })
+    vim.keymap.set("n", "<leader>0", function() harpoon:list():select(0) end, { desc = "Harpoon to file 0" })
     -- clear all marks
     vim.keymap.set("n", "<leader>hx", function()
         harpoon:list():clear()
