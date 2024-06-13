@@ -41,7 +41,7 @@ x = 0
 y = 5
 
 [scrolling]
-# history = 10000
+history = 10000
 multiplier = 3
 
 [window]
