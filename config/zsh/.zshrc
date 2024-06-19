@@ -122,3 +122,4 @@ alias workspace="cd $WORKSPACE"
 alias dev="cd ~/Development"
 
 alias obsidian="cd ~/Obsidian/EdgeVault" 
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
