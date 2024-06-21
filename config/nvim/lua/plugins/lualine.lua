@@ -1,7 +1,7 @@
 return {
   "nvim-lualine/lualine.nvim",
   dependencies = {
-    "SmiteshP/nvim-navic",
+    "smiteshp/nvim-navic",
   },
   config = function()
     local lualine = require("lualine")
