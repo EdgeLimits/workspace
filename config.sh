@@ -128,3 +128,25 @@ fi
 
 ln -s "$ALACRITTY_SOURCE" "$ALACRITTY_TARGET"
 echo "Symbolic link created: $ALACRITTY_SOURCE -> $ALACRITTY_TARGET"
+
+# Kitty
+
+KITTY_TARGET="$HOME/.config/kitty"
+KITTY_SOURCE="$PWD/config/kitty"
+
+if [ -e "$TMUX_TARGET" ]; then
+    BACKUP_OLD_KITTY="${KITTY_TARGET}($(date +%Y-%m-%d_%H-%M-%S))"
+
+    echo "Found old $KITTY_TARGET"
+    echo "Backing up to $BACKUP_OLD_KITTY."
+    
+    mv "$KITTY_TARGET" "$BACKUP_OLD_KITTY"
+elif [ -L "$KITTY_TARGET" ]; then
+    echo "Found old symbolic link at $KITTY_TARGET."
+    echo "Removing symbolic link."
+    
+    rm "$KITTY_TARGET"
+fi
+
+ln -s "$KITTY_SOURCE" "$KITTY_TARGET"
+echo "Symbolic link created: $KITTY_SOURCE -> $KITTY_TARGET"
