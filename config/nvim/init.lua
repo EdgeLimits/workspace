@@ -38,7 +38,6 @@ local opts = {
 }
 
 local modules = {
-  "keymaps",
   "options",
 }
 
