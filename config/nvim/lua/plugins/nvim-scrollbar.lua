@@ -1,14 +1,18 @@
 return {
   "petertriho/nvim-scrollbar",
+  dependencies = {
+    "lewis6991/gitsigns.nvim",
+  },
   event = "VeryLazy",
 	config = function()
 		local scrollbar = require("scrollbar")
+    require("scrollbar.handlers.gitsigns").setup()
 		scrollbar.setup({
 			show_in_active_only = true,
 			handle = {
 				blend = 0,
 				text = " ",
-				-- color = "#1c1c1c",
+				color = "#1c1c1c",
 				color_nr = 234,
 			},
 			marks = {
