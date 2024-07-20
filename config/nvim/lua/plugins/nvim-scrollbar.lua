@@ -12,7 +12,8 @@ return {
 			handle = {
 				blend = 0,
 				text = " ",
-				color = "#1c1c1c",
+				-- color = "#1c1c1c",
+				color = "#2c2c2c",
 				color_nr = 234,
 			},
 			marks = {

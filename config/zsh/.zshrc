@@ -123,3 +123,21 @@ alias dev="cd ~/Development"
 
 alias obsidian="cd ~/Obsidian/EdgeVault" 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+tricent(){
+  tmux new-session -d -s tricent-docker
+  tmux split-window -h
+
+  # Select the first pane (index 0) and open nvim
+  tmux select-pane -t 0
+  tmux send-keys "nvim" C-m
+
+  # Select the second pane (index 1) and run a different command
+  tmux select-pane -t 1
+  tmux send-keys 'htop' C-m
+
+  # Attach to the session
+  tmux attach-session -t custom_session
+}
+
