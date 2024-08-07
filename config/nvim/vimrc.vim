@@ -1,9 +1,14 @@
 " Syntax highlighting on
 syntax on
 
-nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
-nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
+" nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
+" nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
 nnoremap <silent> <leader>lg :LazyGit<CR>
+
+nnoremap k gk
+nnoremap gk k
+nnoremap j gj
+nnoremap gj j
 
 set spelllang = "en_us"
 set spell

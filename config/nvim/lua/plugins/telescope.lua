@@ -61,9 +61,9 @@ return{
         grep_string = {
           hidden = true,
         },
-        lsp_references = {
-          theme = "cursor",
-        }
+        -- lsp_references = {
+        --   theme = "cursor",
+        -- }
       },
     })
 
