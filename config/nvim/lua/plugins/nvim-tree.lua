@@ -8,8 +8,12 @@ return {
 				side = "right", -- Place the file explorer on the right side
 				width = 30, -- Adjust the width as needed
 			},
+			update_focused_file = {
+				enable = true, -- Update the focused file
+				update_cwd = true, -- Update the current working directory
+			},
 			-- Key mapping for toggling nvim-tree with <Leader>e
-			vim.api.nvim_set_keymap("n", "<Leader>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true }),
+			vim.api.nvim_set_keymap("n", "<Leader>fe", ":NvimTreeToggle<CR>", { noremap = true, silent = true }),
 		})
 	end,
 }
