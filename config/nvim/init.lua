@@ -2,12 +2,16 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- disable netrw at the very start of your init.lua
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
-local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
-  vim.fn.system { 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath }
+	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+	vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
@@ -21,24 +25,24 @@ vim.g.loaded_node_provider = 0
 vim.loader.enable()
 
 local config = {
-    { import = "plugins" },
+	{ import = "plugins" },
 }
 
 local opts = {
-    install = {
-      theme = "catppuccin",
-    },
-    checker = {
-        enable = true,
-        notify = false,
-    },
-    change_detection = {
-        notify = false,
-    }
+	install = {
+		theme = "catppuccin",
+	},
+	checker = {
+		enable = true,
+		notify = false,
+	},
+	change_detection = {
+		notify = false,
+	},
 }
 
 local modules = {
-  "options",
+	"options",
 }
 
 local vimrc = vim.fn.stdpath("config") .. "/vimrc.vim"
@@ -48,15 +52,12 @@ require("lazy").setup(config, opts)
 
 -- Safely load the necessary user-defined Lua modules meant to customise Neovim.
 for _, module in ipairs(modules) do
-  local ok, error = pcall(require, module)
-  if not ok then
-    print("Error loading module: " .. error)
-  end
+	local ok, error = pcall(require, module)
+	if not ok then
+		print("Error loading module: " .. error)
+	end
 end
 
 vim.o.termguicolors = true
 -- vim.cmd.colorscheme "catppuccin-macchiato"
-vim.cmd.colorscheme "catppuccin-mocha"
-
-
-
+vim.cmd.colorscheme("catppuccin-mocha")
