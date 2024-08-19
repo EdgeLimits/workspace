@@ -2,10 +2,10 @@
 
 # Define an array of font files
 FONT_FILES=(
-    "setup/fonts/MesloLGS NF Bold Italic.ttf"
-    "setup/fonts/MesloLGS NF Bold.ttf"
-    "setup/fonts/MesloLGS NF Italic.ttf"
-    "setup/fonts/MesloLGS NF Regular.ttf"
+    "fonts/MesloLGS NF Bold Italic.ttf"
+    "fonts/MesloLGS NF Bold.ttf"
+    "fonts/MesloLGS NF Italic.ttf"
+    "fonts/MesloLGS NF Regular.ttf"
     # Add more font files as needed
 )
 

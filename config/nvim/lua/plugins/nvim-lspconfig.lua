@@ -180,6 +180,7 @@ return { -- LSP Configuration & Pluginslsp
 			"pylint",
 			"black",
 			"json-lsp",
+			"css-lsp",
 		})
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
