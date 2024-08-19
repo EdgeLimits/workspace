@@ -1,5 +1,3 @@
-#
-#
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -10,8 +8,8 @@
 
 # Path to your oh-my-zsh installation.
 export WORKSPACE="$HOME/workspace"
-
 alias workspace="cd $WORKSPACE"
+
 alias dev="cd ~/Development"
 alias tct="cd ~/Development/tct"
 
@@ -23,5 +21,12 @@ export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 
+# Activate syntax highlighting
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 # brew install starship
 eval "$(starship init zsh)"
+
+# Activate autosuggestions
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+

@@ -48,4 +48,7 @@ echo "Wezterm installed successfully"
 brew install starship
 echo "Starship installed successfully"
 
+# Install zsh-highlight & zsh-autosuggestions
+brew install zsh-syntax-highlighting zsh-autosuggestions
+echo "Syntax Highlighting & Autosuggestions installed successfully"
 
