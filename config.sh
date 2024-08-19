@@ -24,26 +24,6 @@ ln -s $PWD/config/zsh/.zshrc ~/.zshrc
 echo "Symbolic link created ~/.zshrc to $ZSHRC_SOURCE."
 
 
-# powerlevel10k theme linking
-
-SOURCE_THEME_LOCATION="$PWD/setup/powerlevel10k"
-DESTINATION_THEME_LOCATION="$PWD/setup/ohmyzsh/custom/themes/powerlevel10k"
-
-chmod 755 "$SOURCE_THEME_LOCATION"
-
-# Check if the destination directory exists
-if [ -d "$DESTINATION_THEME_LOCATION" ]; then
-    # If it exists, remove the existing symbolic link
-    if [ -L "$DESTINATION_THEME_LOCATION" ]; then
-        echo "Removing existing symbolic link at: $DESTINATION_THEME_LOCATION"
-        rm "$DESTINATION_THEME_LOCATION"
-    fi
-fi
-# Create a new symbolic link
-ln -s "$SOURCE_THEME_LOCATION" "$DESTINATION_THEME_LOCATION"
-echo "Symbolic link created: $DESTINATION_THEME_LOCATION -> $SOURCE_THEME_LOCATION"
-
-
 VIM_TARGET="$HOME/.vimrc"
 VIM_SOURCE="$PWD/config/nvim/vimrc.vim"
 
@@ -107,46 +87,16 @@ echo "Symbolic link created: $TMUX_SOURCE -> $TMUX_TARGET"
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # run <leader>I to install tmux packages
 
-# Alacritty
+WEZTERM_TARGET="$HOME/.config/wezterm"
+WEZTERM_SOURCE="$PWD/config/wezterm"
 
-ALACRITTY_TARGET="$HOME/.alacritty.toml"
-ALACRITTY_SOURCE="$PWD/config/alacritty/.alacritty.toml"
+ln -s "$WEZTERM_SOURCE" "$WEZTERM_TARGET"
+echo "Symbolic link created: $WEZTERM_SOURCE -> $WEZTERM_TARGET"
 
-if [ -e "$TMUX_TARGET" ]; then
-    BACKUP_OLD_ALACRITTY="${ALACRITTY_TARGET}($(date +%Y-%m-%d_%H-%M-%S))"
+STARSHIP_TARGET="$HOME/.config/starship.toml"
+STARSHIP_SOURCE="$PWD/config/starship/starship.toml"
 
-    echo "Found old $ALACRITTY_TARGET"
-    echo "Backing up to $BACKUP_OLD_ALACRITTY."
-    
-    mv "$ALACRITTY_TARGET" "$BACKUP_OLD_ALACRITTY"
-elif [ -L "$ALACRITTY_TARGET" ]; then
-    echo "Found old symbolic link at $ALACRITTY_TARGET."
-    echo "Removing symbolic link."
-    
-    rm "$ALACRITTY_TARGET"
-fi
+ln -s "$STARSHIP_SOURCE" "$STARSHIP_TARGET"
+echo "Symbolic link created: $STARSHIP_SOURCE -> $STARSHIP_TARGET"
 
-ln -s "$ALACRITTY_SOURCE" "$ALACRITTY_TARGET"
-echo "Symbolic link created: $ALACRITTY_SOURCE -> $ALACRITTY_TARGET"
-
-# Kitty
-
-KITTY_TARGET="$HOME/.config/kitty"
-KITTY_SOURCE="$PWD/config/kitty"
-
-if [ -e "$TMUX_TARGET" ]; then
-    BACKUP_OLD_KITTY="${KITTY_TARGET}($(date +%Y-%m-%d_%H-%M-%S))"
-
-    echo "Found old $KITTY_TARGET"
-    echo "Backing up to $BACKUP_OLD_KITTY."
-    
-    mv "$KITTY_TARGET" "$BACKUP_OLD_KITTY"
-elif [ -L "$KITTY_TARGET" ]; then
-    echo "Found old symbolic link at $KITTY_TARGET."
-    echo "Removing symbolic link."
-    
-    rm "$KITTY_TARGET"
-fi
-
-ln -s "$KITTY_SOURCE" "$KITTY_TARGET"
-echo "Symbolic link created: $KITTY_SOURCE -> $KITTY_TARGET"
+source "$ZSHRC_TARGET"

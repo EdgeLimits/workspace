@@ -24,10 +24,6 @@ for FONT_FILE in "${FONT_FILES[@]}"; do
     fi
 done
 
-# Install iTerm2
-brew install --cask alacritty
-echo "Alacritty installed successfully."
-
 # Install Neovim
 brew install neovim
 echo "Neovim installed successfully."
@@ -43,3 +39,13 @@ echo "Ripgrep installed successfully"
 # Install lazygit
 brew install lazygit
 echo "Lazygit installed successfully"
+
+# Install WezTerm
+brew install --cask wezterm
+echo "Wezterm installed successfully"
+
+# Install Starship
+brew install starship
+echo "Starship installed successfully"
+
+

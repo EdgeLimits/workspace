@@ -23,3 +23,5 @@ export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 
+# brew install starship
+eval "$(starship init zsh)"
