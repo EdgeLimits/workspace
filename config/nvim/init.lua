@@ -23,15 +23,13 @@ vim.g.loaded_node_provider = 0
 
 -- INFO: Enable an experimental fast module loader. See the PR for more information:
 vim.loader.enable()
+vim.o.termguicolors = true
 
 local config = {
 	{ import = "plugins" },
 }
 
 local opts = {
-	install = {
-		theme = "catppuccin",
-	},
 	checker = {
 		enable = true,
 		notify = false,
@@ -58,6 +56,3 @@ for _, module in ipairs(modules) do
 	end
 end
 
-vim.o.termguicolors = true
--- vim.cmd.colorscheme "catppuccin-macchiato"
-vim.cmd.colorscheme("catppuccin-mocha")

@@ -13,6 +13,9 @@ alias workspace="cd $WORKSPACE"
 alias dev="cd ~/Development"
 alias tct="cd ~/Development/tct"
 
+# celery -A scheduler worker -l info --pool prefork -Q celery
+
+
 alias obsidian="cd ~/Obsidian/EdgeVault" 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
@@ -21,11 +24,15 @@ export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 
+# brew install starship
+eval "$(starship init zsh)"
+
 # Activate syntax highlighting
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# brew install starship
-eval "$(starship init zsh)"
+(( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
+ZSH_HIGHLIGHT_STYLES[path]=none
+ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 
 # Activate autosuggestions
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
