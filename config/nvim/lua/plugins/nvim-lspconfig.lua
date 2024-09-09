@@ -142,7 +142,7 @@ return { -- LSP Configuration & Pluginslsp
 			--     },
 			--   },
 			-- },
-			tsserver = {},
+			ts_ls = {},
 			lua_ls = {
 				settings = {
 					Lua = {
