@@ -174,7 +174,8 @@ return { -- LSP Configuration & Pluginslsp
 		local ensure_installed = vim.tbl_keys(servers or {})
 		vim.list_extend(ensure_installed, {
 			"astro-language-server",
-			"stylua", -- Used to format lua code
+			"debugpy",
+			"stylua",
 			"lua_ls",
 			"pyright",
 			"pylint",
