@@ -78,3 +78,8 @@ load_nvmrc() {
   fi
 }
 
+
+source_env(){
+  source venv/bin/activate
+  source .env
+}
