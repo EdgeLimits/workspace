@@ -23,8 +23,18 @@ config = {
 		top = 4,
 		bottom = 4,
 	},
-  -- background = { },
-  -- window_background_opacity = 1,
+	-- background = { },
+	-- window_background_opacity = 1,
+	window_frame = {
+		border_left_width = "0.2cell",
+		border_right_width = "0.2cell",
+		border_bottom_height = "0.1cell",
+		border_top_height = "0.1cell",
+		border_left_color = "black",
+		border_right_color = "black",
+		border_bottom_color = "black",
+		border_top_color = "black",
+	},
 }
 
 return config
