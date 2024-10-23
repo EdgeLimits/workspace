@@ -38,6 +38,7 @@ if [ -f '/Users/ekr/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ekr/google-
 if [ -f '/Users/ekr/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ekr/google-cloud-sdk/completion.zsh.inc'; fi
 # Function to load NVM if it's not already loaded
 
+export NVM_DIR="$HOME/.nvm"
 
 load_nvm() {
   if [ -z "$NVM_DIR" ]; then
