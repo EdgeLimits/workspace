@@ -38,48 +38,48 @@ if [ -f '/Users/ekr/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ekr/google-
 if [ -f '/Users/ekr/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ekr/google-cloud-sdk/completion.zsh.inc'; fi
 # Function to load NVM if it's not already loaded
 
+export NVM_DIR="$HOME/.nvm"
 
-load_nvm() {
-  if [ -z "$NVM_DIR" ]; then
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-  fi
-}
+# load_nvm() {
+#   if [ -z "$NVM_DIR" ]; then
+#     export NVM_DIR="$HOME/.nvm"
+#     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#   fi
+# }
+#
+# # Function to find the .nvmsrc file by searching the current and parent directories
+# find_nvmrc() {
+#   local dir="$PWD"
+#   while [ "$dir" != "/" ]; do
+#     if [ -f "$dir/.nvmsrc" ]; then
+#       echo "$dir/.nvmsrc"
+#       return
+#     fi
+#     dir=$(dirname "$dir")
+#   done
+#   return 1
+# }
+#
+# # Function to load the node version from .nvmsrc
+# load_nvmrc() {
+#   local nvmrc_path
+#   nvmrc_path="$(find_nvmrc)"
+#   echo $nvmrc_path
+#
+#   if [ -n "$nvmrc_path" ]; then
+#     load_nvm
+#     local nvm_version
+#     nvm_version=$(cat "$nvmrc_path")
+#     if [ "$nvm_version" = "$(nvm version)" ]; then
+#       return
+#     elif nvm install "$nvm_version"; then
+#       nvm use "$nvm_version"
+#     fi
+#   fi
+# }
 
-# Function to find the .nvmsrc file by searching the current and parent directories
-find_nvmrc() {
-  local dir="$PWD"
-  while [ "$dir" != "/" ]; do
-    if [ -f "$dir/.nvmsrc" ]; then
-      echo "$dir/.nvmsrc"
-      return
-    fi
-    dir=$(dirname "$dir")
-  done
-  return 1
-}
-
-# Function to load the node version from .nvmsrc
-load_nvmrc() {
-  local nvmrc_path
-  nvmrc_path="$(find_nvmrc)"
-  echo $nvmrc_path
-
-  if [ -n "$nvmrc_path" ]; then
-    load_nvm
-    local nvm_version
-    nvm_version=$(cat "$nvmrc_path")
-    if [ "$nvm_version" = "$(nvm version)" ]; then
-      return
-    elif nvm install "$nvm_version"; then
-      nvm use "$nvm_version"
-    fi
-  fi
-}
-
-
-source_env(){
+src(){
   source venv/bin/activate
   source .env
 }
