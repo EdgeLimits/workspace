@@ -30,12 +30,6 @@ alias obsidian="cd ~/Obsidian/EdgeVault"
 
 # celery -A scheduler worker -l info --pool prefork -Q celery
 
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/ekr/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ekr/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/ekr/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ekr/google-cloud-sdk/completion.zsh.inc'; fi
 # Function to load NVM if it's not already loaded
 
 export NVM_DIR="$HOME/.nvm"
@@ -83,3 +77,9 @@ src(){
   source venv/bin/activate
   source .env
 }
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/edge/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/edge/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/edge/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/edge/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
