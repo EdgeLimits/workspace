@@ -16,7 +16,8 @@ config = {
 	-- color_scheme = "OLEDpuccin",
 	-- font = wezterm.font("JetBrains Mono", { weight = "Bold" }),
 	font = wezterm.font("JetBrains Mono"),
-	font_size = 15,
+	font_size = 14,
+	line_height = 1.05,
 	window_padding = {
 		left = 8,
 		right = 8,
