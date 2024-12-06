@@ -17,7 +17,6 @@ return {
 				cmp = true,
 				gitsigns = true,
 				telescope = true,
-				-- style = "nvchad",
 				native_lsp = {
 					enabled = true,
 					virtual_text = {
@@ -35,13 +34,15 @@ return {
 				},
 				navic = {
 					enabled = true,
-					custom_bg = colors.mantle,
+					custom_bg = colors.base,
+					custom_fg = colors.blue,
 				},
 				neotree = {
 					enabled = true,
 					show_root = true,
 					transparent_panel = false,
 				},
+				lualine = {},
 				noice = true,
 				notify = true,
 				nvimtree = {
