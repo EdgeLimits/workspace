@@ -3,6 +3,7 @@ return {
 	"catppuccin/nvim",
 	name = "catppuccin",
 	priority = 1000,
+	lazy = false,
 	config = function()
 		local catppuccin = require("catppuccin")
 
@@ -35,7 +36,7 @@ return {
 				navic = {
 					enabled = true,
 					custom_bg = colors.base,
-					custom_fg = colors.blue,
+					custom_fg = colors.red,
 				},
 				neotree = {
 					enabled = true,
