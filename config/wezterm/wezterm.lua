@@ -19,8 +19,8 @@ config = {
 	font_size = 14,
 	line_height = 1.05,
 	window_padding = {
-		left = 16,
-		right = 16,
+		left = 24,
+		right = 24,
 		top = 16,
 		bottom = 16,
 	},
