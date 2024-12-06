@@ -39,27 +39,10 @@ return {
 					"diagnostics",
 				},
 				lualine_c = {},
-				-- lualine_c = {'filename'},
 				lualine_x = { "encoding", "fileformat", "filetype" },
 				lualine_y = { "searchcount", "progress" },
 				lualine_z = { "location" },
 			},
-			-- inactive_sections = {
-			--   lualine_a = {},
-			--   lualine_b = {},
-			--   lualine_c = {'filename'},
-			--   lualine_x = {'location'},
-			--   lualine_y = {},
-			--   lualine_z = {},
-			-- },
-			-- tabline = {
-			--   lualine_a = {},
-			--   lualine_b = {},
-			--   lualine_c = {},
-			--   lualine_x = {},
-			--   lualine_y = {},
-			--   lualine_z = {},
-			-- },
 			winbar = {
 				lualine_c = {},
 				lualine_b = {
@@ -72,7 +55,14 @@ return {
 						},
 					},
 				},
-				lualine_a = {
+				lualine_a = {},
+				lualine_x = {},
+				lualine_y = { {
+					"filename",
+					path = 1,
+					file_status = false,
+				} },
+				lualine_z = {
 					{
 						"filename",
 						path = 0,
@@ -85,18 +75,10 @@ return {
 						},
 					},
 				},
-				lualine_x = {},
-				lualine_y = { {
-					"filename",
-					path = 1,
-					file_status = false,
-				} },
-				lualine_z = {},
 			},
 			inactive_winbar = {
 				lualine_c = {},
-				lualine_b = {},
-				lualine_a = {
+				lualine_b = {
 					{
 						"navic",
 						color_corection = nil,
@@ -106,6 +88,7 @@ return {
 						},
 					},
 				},
+				lualine_a = {},
 				lualine_x = {},
 				lualine_y = { {
 					"filename",
