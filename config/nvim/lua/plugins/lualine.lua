@@ -24,7 +24,7 @@ return {
 				icons_enabled = true,
 				theme = custom_catppuccin,
 				component_separators = "|",
-				section_separators = "",
+				section_separators = { left = "", right = "" },
 				disabled_filetypes = { "NvimTree" },
 			},
 			sections = {
@@ -49,8 +49,21 @@ return {
 				lualine_z = { "location" },
 			},
 			winbar = {
-				lualine_a = {},
-				lualine_b = {
+				lualine_b = {},
+				lualine_a = {
+					{
+						"filename",
+						path = 0,
+						file_status = true,
+						symbols = {
+							modified = "", -- Text to show when the file is modified.
+							readonly = "", -- Text to show when the file is non-modifiable or readonly.
+							unnamed = "", -- Text to show for unnamed buffers.
+							newfile = "", -- Text to show for newly created file before first write
+						},
+					},
+				},
+				lualine_c = {
 					{
 						"navic",
 						color_corection = nil,
@@ -60,7 +73,6 @@ return {
 						},
 					},
 				},
-				lualine_c = {},
 				lualine_y = {},
 				lualine_x = {
 					{
@@ -78,8 +90,21 @@ return {
 				lualine_z = {},
 			},
 			inactive_winbar = {
-				lualine_c = {},
+				lualine_a = {},
 				lualine_b = {
+					{
+						"filename",
+						path = 0,
+						file_status = true,
+						symbols = {
+							modified = "", -- Text to show when the file is modified.
+							readonly = "", -- Text to show when the file is non-modifiable or readonly.
+							unnamed = "", -- Text to show for unnamed buffers.
+							newfile = "", -- Text to show for newly created file before first write
+						},
+					},
+				},
+				lualine_c = {
 					{
 						"navic",
 						color_corection = nil,
@@ -89,7 +114,6 @@ return {
 						},
 					},
 				},
-				lualine_a = {},
 				lualine_x = {},
 				lualine_y = {
 					{
