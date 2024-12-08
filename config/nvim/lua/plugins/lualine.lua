@@ -25,6 +25,7 @@ return {
 				theme = custom_catppuccin,
 				component_separators = "|",
 				section_separators = "",
+				disabled_filetypes = { "NvimTree" },
 			},
 			sections = {
 				lualine_a = { "mode" },
