@@ -33,6 +33,14 @@ return {
 						information = { "underline" },
 					},
 				},
+				aerial = {
+					enabled = true,
+					default_bindings = true,
+					default_direction = "right",
+					win_opts = {
+						winhighlight = "Normal:AerialNormal",
+					},
+				},
 				navic = {
 					enabled = true,
 					custom_bg = colors.base,
@@ -69,7 +77,8 @@ return {
 					TelescopeSelectionCaret = { fg = colors.pink },
 					TelescopePreviewBorder = { bg = colors.crust, fg = colors.crust },
 					TelescopePreviewNormal = { bg = colors.crust, fg = colors.subtext1 },
-					-- NavicIconsFile = { fg = colors.blue, bg = lualine_bg },
+					-- NavicIconsFile = { fg = colors.blue, bg = lualine_bg },AerialNormal
+					AerialNormal = { bg = colors.mantle, fg = colors.text },
 				},
 			},
 		})
