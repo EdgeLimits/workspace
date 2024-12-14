@@ -182,6 +182,8 @@ return { -- LSP Configuration & Pluginslsp
 			"black",
 			"json-lsp",
 			"css-lsp",
+			"bash-language-server",
+			"shfmt",
 		})
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
